@@ -11,12 +11,12 @@ License:        None
 URL:            https://github.com/GeoffMontee/tds_fdw
 Source:         https://github.com/tds-fdw/tds_fdw/archive/v1.0.7.tar.gz
 
-Requires:       postgresql95 >= 9.4.1
-Requires:       postgresql95-server >= 9.4.1
-Requires:       postgresql95-libs >= 9.4.1
+Requires:       postgresql94 >= 9.4.1
+Requires:       postgresql94-server >= 9.4.1
+Requires:       postgresql94-libs >= 9.4.1
 Requires:       freetds >= 0.91
 
-BuildRequires:  freetds-devel, postgresql95-devel 
+BuildRequires:  freetds-devel, postgresql94-devel 
 BuildRequires:  automake, gcc-c++
 
 ###########################
@@ -32,11 +32,11 @@ Microsoft SQL server.
 
 ###########################
 %build
-PATH=/usr/pgsql-9.5/bin:$PATH make USE_PGXS=1
+PATH=/usr/pgsql-9.4/bin:$PATH make USE_PGXS=1
 
 %install
 rm -rf %{buildroot}
-PATH=/usr/pgsql-9.5/bin:$PATH 
+PATH=/usr/pgsql-9.4/bin:$PATH 
 make USE_PGXS=1 install DESTDIR=%{buildroot}
 
 
@@ -45,4 +45,4 @@ rm -rf %{buildroot}
 
 ###########################
 %files
-/usr/pgsql-9.5
+/usr/pgsql-9.4
