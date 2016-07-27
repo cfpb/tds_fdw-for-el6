@@ -6,7 +6,7 @@
 
 ## Dependencies
 
-    None 
+    The rpmbuild process requires freetds-devel and postgresql94 or higher    
 
 ## Installation
 
@@ -15,12 +15,6 @@
 
     Also, to install PostgreSQL (if not installed already)
     you can visit https://wiki.postgresql.org/wiki/YUM_Installation 
-
-    OR 
-
-    wget https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
-    sudo rpm -ivh pgdg-centos95-9.5-2.noarch.rpm
-    sudo yum install postgresql95 postgresql95-server postgresql95-libs postgresql95-devel
 
 ### Build the RPM using Vagrant
 
@@ -36,7 +30,7 @@
 
 ### Install the RPM
 
-Install the built RPM by running "sudo yum install RPMS/x86_64/.rpm"
+Install the built RPM by running "sudo yum install RPMS/x86_64/tds_fdw-1.0.7-1.el6.x86_64.rpm"
 
 ## Configuration
 
