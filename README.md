@@ -6,7 +6,8 @@
 
 ## Dependencies
 
-    The rpmbuild process requires freetds-devel and postgresql94 or higher    
+    The rpmbuild process requires freetds-devel and postgresql94 or higher.
+    This particular build is done with postgresql95    
 
 ## Installation
 

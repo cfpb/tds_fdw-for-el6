@@ -1,22 +1,22 @@
 ###########################
 %global debug_package %{nil}
 
-Name:           tds_fdw
+Name:           tds_fdw%{suffix}
 Version:        1.0.7
 Release:        1%{?dist}
-Summary:        TDS foreing data wrapper for PostgreSQL 9.4
+Summary:        TDS foreing data wrapper for PostgreSQL 9.5
 
 Group:          Development/Tools
 License:        None
 URL:            https://github.com/GeoffMontee/tds_fdw
 Source:         https://github.com/tds-fdw/tds_fdw/archive/v1.0.7.tar.gz
 
-Requires:       postgresql94 >= 9.4.1
-Requires:       postgresql94-server >= 9.4.1
-Requires:       postgresql94-libs >= 9.4.1
+Requires:       postgresql95%{suffix} >= 9.5.1
+Requires:       postgresql95-server >= 9.5.1
+Requires:       postgresql95-libs >= 9.5.1
 Requires:       freetds >= 0.91
 
-BuildRequires:  freetds-devel, postgresql94-devel 
+BuildRequires:  freetds-devel, postgresql95-devel 
 BuildRequires:  automake, gcc-c++
 
 ###########################
@@ -32,11 +32,11 @@ Microsoft SQL server.
 
 ###########################
 %build
-PATH=/usr/pgsql-9.4/bin:$PATH make USE_PGXS=1
+PATH=/usr/pgsql-9.5/bin:$PATH make USE_PGXS=1
 
 %install
 rm -rf %{buildroot}
-PATH=/usr/pgsql-9.4/bin:$PATH 
+PATH=/usr/pgsql-9.5/bin:$PATH 
 make USE_PGXS=1 install DESTDIR=%{buildroot}
 
 
@@ -45,4 +45,4 @@ rm -rf %{buildroot}
 
 ###########################
 %files
-/usr/pgsql-9.4
+/usr/pgsql-9.5
